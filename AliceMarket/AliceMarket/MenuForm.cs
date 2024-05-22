@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace AliceMarket
 {
-    public partial class MenuForm : Form
+    public partial class MenuForm : System.Windows.Forms.Form
     {
         public MenuForm()
         {
@@ -26,6 +26,12 @@ namespace AliceMarket
         {
             Customers customers = new Customers();
             customers.Show();
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            Products products = new Products();
+            products.Show();
         }
     }
 }

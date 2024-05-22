@@ -99,6 +99,7 @@
             this.btnProducts.TabIndex = 4;
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = false;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // btnCategories
             // 
