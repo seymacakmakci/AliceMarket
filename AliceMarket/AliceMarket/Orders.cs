@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace AliceMarket
 {
-    public partial class Products : Form
+    public partial class Orders : Form
     {
-        public Products()
+        public Orders()
         {
             InitializeComponent();
         }
 
-        private void Products_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void txtCustomerID_TextChanged(object sender, EventArgs e)
         {
 
         }

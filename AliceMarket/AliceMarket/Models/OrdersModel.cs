@@ -12,5 +12,6 @@ namespace AliceMarket.Models
         public int CustomerId { get; set; }
         public int ProductId { get; set; }
         public DateTime OrderDate { get; set; }
+        public int OrderAmount { get; set; }
     }
 }

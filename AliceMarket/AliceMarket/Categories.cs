@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace AliceMarket
 {
-    public partial class Products : Form
+    public partial class Categories : Form
     {
-        public Products()
+        public Categories()
         {
             InitializeComponent();
-        }
-
-        private void Products_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

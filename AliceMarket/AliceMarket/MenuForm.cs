@@ -33,5 +33,17 @@ namespace AliceMarket
             Products products = new Products();
             products.Show();
         }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            Orders orders = new Orders();
+            orders.Show();
+        }
+
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            Categories categories = new Categories();
+            categories.Show();
+        }
     }
 }

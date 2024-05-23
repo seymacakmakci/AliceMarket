@@ -101,49 +101,83 @@ namespace AliceMarket
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+
+
+        /* private void txtFind_TextChanged(object sender, EventArgs e)
+         {
+             if (!string.IsNullOrWhiteSpace(txtFind.Text))
+             {
+                 var foundCustomers = market.CustomersTbls
+                     .Where(c => c.Name.Contains(txtFind.Text))
+                     .ToList();
+                 dgvCustomers.DataSource = foundCustomers;
+             }
+             else
+             {
+                 listCustomers();
+             }
+         } */
+
+        private void txtFind_TextChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(txtCustomerID.Text, out int customerId))
+            if (txtFind.Text != string.Empty)
             {
-                var customer = market.CustomersTbls.FirstOrDefault(c => c.CustomerID == customerId);
-
-                if (customer != null)
-                {
-                    customer.Name = txtCstName.Text;
-                    customer.Phone = txtPhone.Text;
-                    customer.City = txtCity.Text;
-                    customer.BirthDate = ParseDateTime(txtBirthdate.Text);
-
-                    market.SaveChanges();
-
-                    MessageBox.Show("Update is made successfully");
-                    listCustomers();
-                    Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Customer not found.");
-                }
+                var find_member = market.CustomersTbls.Where(find => find.Name.Contains(txtFind.Text));
+                dgvCustomers.DataSource = find_member.ToList();
             }
             else
             {
-                MessageBox.Show("Please select a valid customer.");
+                dgvCustomers.DataSource = market.CustomersTbls.ToList();
             }
         }
 
-        private void txtFindCustomer_TextChanged(object sender, EventArgs e)
+
+        /* private void btnEdit_Click(object sender, EventArgs e)
+         {
+             if (int.TryParse(txtCustomerID.Text, out int customerId))
+             {
+                 var customer = market.CustomersTbls.FirstOrDefault(c => c.CustomerID == customerId);
+
+                 if (customer != null)
+                 {
+                     customer.Name = txtCstName.Text;
+                     customer.Phone = txtPhone.Text;
+                     customer.City = txtCity.Text;
+                     customer.BirthDate = ParseDateTime(txtBirthdate.Text);
+
+                     market.SaveChanges();
+
+                     MessageBox.Show("Update is made successfully");
+                     listCustomers();
+                     Clear();
+                 }
+                 else
+                 {
+                     MessageBox.Show("Customer not found.");
+                 }
+             }
+             else
+             {
+                 MessageBox.Show("Please select a valid customer.");
+             }
+         }*/
+
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtFind.Text))
-            {
-                var foundCustomers = market.CustomersTbls
-                    .Where(c => c.Name.Contains(txtFind.Text))
-                    .ToList();
-                dgvCustomers.DataSource = foundCustomers;
-            }
-            else
-            {
-                listCustomers();
-            }
+            int customer_id = int.Parse(txtCustomerID.Text);   //convert the text value to int by int.Parse
+            var upd_customer = market.CustomersTbls.First(upd => upd.CustomerID == customer_id);
+
+            upd_customer.Name = txtCstName.Text;
+            upd_customer.City = txtCity.Text;
+            upd_customer.Phone = txtPhone.Text;
+            upd_customer.BirthDate = upd_customer.BirthDate;
+
+            market.SaveChanges();
+            MessageBox.Show("Update is made successfully");
+            listCustomers();
+            Clear();
         }
+
+
     }
 }

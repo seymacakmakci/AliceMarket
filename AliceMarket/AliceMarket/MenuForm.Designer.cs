@@ -115,6 +115,7 @@
             this.btnCategories.TabIndex = 5;
             this.btnCategories.Text = "Categories";
             this.btnCategories.UseVisualStyleBackColor = false;
+            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
             // 
             // btnOrders
             // 
@@ -130,6 +131,7 @@
             this.btnOrders.TabIndex = 6;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = false;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // MenuForm
             // 
@@ -144,6 +146,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MenuForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

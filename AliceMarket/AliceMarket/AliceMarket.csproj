@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories.Designer.cs">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contexts\AliceMarketDbContext.cs" />
     <Compile Include="Customers.cs">
       <SubType>Form</SubType>
@@ -101,6 +107,12 @@
     <Compile Include="Models\CustomersModel.cs" />
     <Compile Include="Models\OrdersModel.cs" />
     <Compile Include="Models\ProductsModel.cs" />
+    <Compile Include="Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Products.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Categories.resx">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
