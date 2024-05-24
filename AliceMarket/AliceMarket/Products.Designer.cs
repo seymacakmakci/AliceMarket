@@ -354,5 +354,8 @@ namespace AliceMarket
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtFind;
         private EventHandler txtProductID_TextChanged;
+        private EventHandler btnAdd_Click;
+
+        public EventHandler Products_Load { get; private set; }
     }
 }
