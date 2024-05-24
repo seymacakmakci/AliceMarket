@@ -44,18 +44,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(424, 40);
+            this.label1.Location = new System.Drawing.Point(283, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 38);
+            this.label1.Size = new System.Drawing.Size(72, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Menu";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 116);
+            this.pictureBox1.Size = new System.Drawing.Size(131, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -63,9 +65,10 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(188, 106);
+            this.pictureBox2.Location = new System.Drawing.Point(125, 69);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(14, 11);
+            this.pictureBox2.Size = new System.Drawing.Size(9, 7);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
@@ -77,9 +80,10 @@
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomers.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.FloralWhite;
-            this.btnCustomers.Location = new System.Drawing.Point(174, 170);
+            this.btnCustomers.Location = new System.Drawing.Point(116, 110);
+            this.btnCustomers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(244, 108);
+            this.btnCustomers.Size = new System.Drawing.Size(163, 70);
             this.btnCustomers.TabIndex = 3;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
@@ -93,9 +97,10 @@
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProducts.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducts.ForeColor = System.Drawing.Color.FloralWhite;
-            this.btnProducts.Location = new System.Drawing.Point(517, 170);
+            this.btnProducts.Location = new System.Drawing.Point(345, 110);
+            this.btnProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProducts.Name = "btnProducts";
-            this.btnProducts.Size = new System.Drawing.Size(244, 108);
+            this.btnProducts.Size = new System.Drawing.Size(163, 70);
             this.btnProducts.TabIndex = 4;
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = false;
@@ -109,9 +114,10 @@
             this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategories.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategories.ForeColor = System.Drawing.Color.FloralWhite;
-            this.btnCategories.Location = new System.Drawing.Point(517, 366);
+            this.btnCategories.Location = new System.Drawing.Point(345, 238);
+            this.btnCategories.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCategories.Name = "btnCategories";
-            this.btnCategories.Size = new System.Drawing.Size(244, 108);
+            this.btnCategories.Size = new System.Drawing.Size(163, 70);
             this.btnCategories.TabIndex = 5;
             this.btnCategories.Text = "Categories";
             this.btnCategories.UseVisualStyleBackColor = false;
@@ -125,9 +131,10 @@
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrders.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.Color.FloralWhite;
-            this.btnOrders.Location = new System.Drawing.Point(174, 366);
+            this.btnOrders.Location = new System.Drawing.Point(116, 238);
+            this.btnOrders.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(244, 108);
+            this.btnOrders.Size = new System.Drawing.Size(163, 70);
             this.btnOrders.TabIndex = 6;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = false;
@@ -135,10 +142,10 @@
             // 
             // MenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
-            this.ClientSize = new System.Drawing.Size(945, 600);
+            this.ClientSize = new System.Drawing.Size(630, 390);
             this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.btnCategories);
             this.Controls.Add(this.btnProducts);
@@ -147,11 +154,13 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "MenuForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuForm";
+            this.Load += new System.EventHandler(this.MenuForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

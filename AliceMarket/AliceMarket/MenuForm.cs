@@ -45,5 +45,10 @@ namespace AliceMarket
             Categories categories = new Categories();
             categories.Show();
         }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

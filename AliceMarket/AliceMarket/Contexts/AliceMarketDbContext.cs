@@ -11,10 +11,7 @@ namespace AliceMarket.Contexts
 {
     internal class AliceMarketDbContext
     {
-        public DbSet<CustomersModel> Customers { get; set; }
         public DbSet<ProductsModel> Products { get; set; }
-        public DbSet<CategoriesModel> Categories { get; set; }
-        public DbSet<OrdersModel> Orders { get; set; }
 
     }
 }
