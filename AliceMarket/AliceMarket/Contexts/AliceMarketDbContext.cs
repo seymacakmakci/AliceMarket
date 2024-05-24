@@ -9,8 +9,11 @@ using System.Threading.Tasks;
 
 namespace AliceMarket.Contexts
 {
-    internal class AliceMarketDbContext
+    public class AliceMarketDbContext : DbContext
     {
+        public AliceMarketDbContext() : base("name=AliceMarketDbContext")
+        {
+        }
         public DbSet<ProductsModel> Products { get; set; }
 
     }
