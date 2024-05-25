@@ -15,13 +15,10 @@ namespace AliceMarket
         public Orders()
         {
             InitializeComponent();
+            dgvOrders.CellClick += dgvOrders_CellClick;
         }
 
-        private void txtCustomerID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        AliceMarketEntities market = new AliceMarketEntities();
+        readonly AliceMarket2Entities market = new AliceMarket2Entities();
 
         public void ListOrders()
         {
@@ -30,7 +27,7 @@ namespace AliceMarket
 
         public void Clear()
         {
-            txtOrderID.Text = txtCustomerID.Text = txtProductID.Text = txtOrderDate.Text = txtAmount.Text = "";
+            txtOrderID.Text = txtOrderID.Text = txtProductID.Text = txtOrderDate.Text = txtAmount.Text =txtCustomerID.Text= "";
         }
 
         private void Orders_Load(object sender, EventArgs e)
@@ -42,10 +39,12 @@ namespace AliceMarket
         {
             var order = new OrdersTbl
             {
-                CustomerID = int.TryParse(txtCustomerID.Text, out int customerId) ? customerId : (int?)null,
-                ProductID = int.TryParse(txtProductID.Text, out int productId) ? productId : (int?)null,
-                OrderDate = DateTime.TryParse(txtOrderDate.Text, out DateTime orderDate) ? orderDate : (DateTime?)null,
-                Amount = decimal.TryParse(txtAmount.Text, out decimal amount) ? amount : (decimal?)null
+                CustomerID= int.Parse(txtOrderID.Text),
+                ProductID= int.Parse(txtProductID.Text),
+                OrderDate= DateTime.Now,
+                OrderAmount= int.Parse(txtAmount.Text)
+
+               
             };
 
             market.OrdersTbls.Add(order);
@@ -58,71 +57,101 @@ namespace AliceMarket
 
         private void dgvOrders_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                txtOrderID.Text = dgvOrders.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtCustomerID.Text = dgvOrders.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtProductID.Text = dgvOrders.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtOrderDate.Text = dgvOrders.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtAmount.Text = dgvOrders.Rows[e.RowIndex].Cells[4].Value.ToString();
+              if (e.RowIndex >= 0)
+              {
+                var row = dgvOrders.Rows[e.RowIndex];
+                var cellValues = row.Cells.Cast<DataGridViewCell>().Select(cell => cell.Value?.ToString()).ToArray();
+
+                System.Diagnostics.Debug.WriteLine($"Clicked Row Index: {e.RowIndex}, Values: {string.Join(", ", cellValues)}");
+
+                txtOrderID.Text = row.Cells[0].Value?.ToString() ?? string.Empty;
+                txtCustomerID.Text = row.Cells[1].Value?.ToString() ?? string.Empty;
+                txtProductID.Text = row.Cells[2].Value?.ToString() ?? string.Empty;
+                txtOrderDate.Text = row.Cells[3].Value?.ToString() ?? string.Empty;
+                txtAmount.Text = row.Cells[4].Value?.ToString() ?? string.Empty;
             }
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtOrderID.Text, out int orderId))
+           
+
+            try
             {
-                var order = market.OrdersTbls.FirstOrDefault(o => o.OrderID == orderId);
-
-                if (order != null)
+                if (int.TryParse(txtOrderID.Text, out int orderId))
                 {
-                    market.OrdersTbls.Remove(order);
-                    market.SaveChanges();
+                    var order = market.OrdersTbls.FirstOrDefault(o => o.OrderID == orderId);
 
-                    MessageBox.Show("Order is deleted.");
-                    ListOrders();
-                    Clear();
+                    if (order != null)
+                    {
+                        market.OrdersTbls.Remove(order);
+                        market.SaveChanges();
+
+                        MessageBox.Show("Order is deleted.");
+                        ListOrders();
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Order not found.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Order not found.");
+                    MessageBox.Show("Please select a valid order.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Please select a valid order.");
+                MessageBox.Show($"An error occurred: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Exception: {ex}");
             }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtOrderID.Text, out int orderId))
-            {
-                var order = market.OrdersTbls.FirstOrDefault(o => o.OrderID == orderId);
+            /* if (int.TryParse(txtOrderID.Text, out int orderId))
+             {
+                 var order = market.OrdersTbls.FirstOrDefault(o => o.OrderID == orderId);
 
-                if (order != null)
-                {
-                    order.CustomerID = int.TryParse(txtCustomerID.Text, out int customerId) ? customerId : (int?)null;
-                    order.ProductID = int.TryParse(txtProductID.Text, out int productId) ? productId : (int?)null;
-                    order.OrderDate = DateTime.TryParse(txtOrderDate.Text, out DateTime orderDate) ? orderDate : (DateTime?)null;
-                    order.Amount = decimal.TryParse(txtAmount.Text, out decimal amount) ? amount : (decimal?)null;
+                 if (order != null)
+                 {
+                     order.CustomerID = int.TryParse(txtOrderID.Text, out int customerId) ? customerId : (int?)null;
+                     order.ProductID = int.TryParse(txtProductID.Text, out int productId) ? productId : (int?)null;
+                     order.OrderDate = DateTime.TryParse(txtOrderDate.Text, out DateTime orderDate) ? orderDate : (DateTime?)null;
+                     order.OrderAmount = int.TryParse(txtAmount.Text, out int amount) ? amount : (int?)null;
 
-                    market.SaveChanges();
+                     market.SaveChanges();
 
-                    MessageBox.Show("Update is made successfully");
-                    ListOrders();
-                    Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Order not found.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please select a valid order.");
-            }
+                     MessageBox.Show("Update is made successfully");
+                     listOrders();
+                     Clear();
+                 }
+                 else
+                 {
+                     MessageBox.Show("Order not found.");
+                 }
+             }
+             else
+             {
+                 MessageBox.Show("Please select a valid order.");
+             }
+         }*/
+
+            int order_id = int.Parse(txtOrderID.Text);   //convert the text value to int by int.Parse
+            var upd_order = market.OrdersTbls.First(upd => upd.OrderID == order_id);
+
+            upd_order.ProductID = int.Parse(txtProductID.Text);
+            upd_order.CustomerID = int.Parse(txtCustomerID.Text);
+            upd_order.OrderDate = upd_order.OrderDate;
+            upd_order.OrderAmount = int.Parse(txtAmount.Text);
+
+            market.SaveChanges();
+            MessageBox.Show("Update is made successfully");
+            ListOrders();
+            Clear();
+
         }
-
     }
 }

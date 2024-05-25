@@ -13,10 +13,10 @@ namespace AliceMarket
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AliceMarketEntities1 : DbContext
+    public partial class AliceMarket1Entities1 : DbContext
     {
-        public AliceMarketEntities1()
-            : base("name=AliceMarketEntities1")
+        public AliceMarket1Entities1()
+            : base("name=AliceMarket1Entities1")
         {
         }
     
@@ -25,6 +25,6 @@ namespace AliceMarket
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<CustomersTbl> CustomersTbls { get; set; }
+        public virtual DbSet<CategoriesTbl> CategoriesTbls { get; set; }
     }
 }

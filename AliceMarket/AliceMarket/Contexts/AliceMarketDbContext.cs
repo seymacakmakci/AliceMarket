@@ -15,6 +15,7 @@ namespace AliceMarket.Contexts
         {
         }
         public DbSet<ProductsModel> Products { get; set; }
+        public DbSet<CustomersModel> Customers { get; set; }    
 
     }
 }

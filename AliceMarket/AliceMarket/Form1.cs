@@ -19,10 +19,7 @@ namespace AliceMarket
         }
 
         SqlConnection conn = new SqlConnection("Data Source=LAPTOP-L29UBIHK\\SQLEXPRESS02;Initial Catalog=AliceDemo;Integrated Security=True");
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnLogin_Click(object sender, EventArgs e)
         {

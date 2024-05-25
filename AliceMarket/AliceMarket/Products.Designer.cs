@@ -51,6 +51,7 @@ namespace AliceMarket
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.txtFind = new System.Windows.Forms.TextBox();
+            this.btnCreateDB = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
@@ -60,10 +61,9 @@ namespace AliceMarket
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FloralWhite;
-            this.label1.Location = new System.Drawing.Point(348, 31);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(522, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 23);
+            this.label1.Size = new System.Drawing.Size(137, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "Products";
             // 
@@ -75,9 +75,8 @@ namespace AliceMarket
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 64);
+            this.panel1.Size = new System.Drawing.Size(1164, 98);
             this.panel1.TabIndex = 1;
             // 
             // label2
@@ -85,10 +84,9 @@ namespace AliceMarket
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FloralWhite;
-            this.label2.Location = new System.Drawing.Point(318, 6);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(477, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 26);
+            this.label2.Size = new System.Drawing.Size(241, 38);
             this.label2.TabIndex = 2;
             this.label2.Text = "Alice\'s Market";
             // 
@@ -96,20 +94,18 @@ namespace AliceMarket
             // 
             this.panel2.BackColor = System.Drawing.Color.OrangeRed;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 476);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 733);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 8);
+            this.panel2.Size = new System.Drawing.Size(1164, 12);
             this.panel2.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 224);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(40, 345);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 14);
+            this.label3.Size = new System.Drawing.Size(54, 22);
             this.label3.TabIndex = 3;
             this.label3.Text = "Price";
             // 
@@ -117,10 +113,9 @@ namespace AliceMarket
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 131);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(40, 202);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 14);
+            this.label4.Size = new System.Drawing.Size(32, 22);
             this.label4.TabIndex = 4;
             this.label4.Text = "ID";
             // 
@@ -128,10 +123,9 @@ namespace AliceMarket
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 180);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(26, 277);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 14);
+            this.label5.Size = new System.Drawing.Size(137, 22);
             this.label5.TabIndex = 5;
             this.label5.Text = "Product Name";
             // 
@@ -139,10 +133,9 @@ namespace AliceMarket
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 272);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(39, 418);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 14);
+            this.label6.Size = new System.Drawing.Size(87, 22);
             this.label6.TabIndex = 6;
             this.label6.Text = "Quantity";
             // 
@@ -150,57 +143,50 @@ namespace AliceMarket
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(26, 314);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(39, 483);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 14);
+            this.label7.Size = new System.Drawing.Size(111, 22);
             this.label7.TabIndex = 7;
             this.label7.Text = "Description";
             // 
             // txtProductID
             // 
             this.txtProductID.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtProductID.Location = new System.Drawing.Point(119, 131);
-            this.txtProductID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductID.Location = new System.Drawing.Point(178, 202);
             this.txtProductID.Name = "txtProductID";
-            this.txtProductID.Size = new System.Drawing.Size(189, 20);
+            this.txtProductID.Size = new System.Drawing.Size(282, 26);
             this.txtProductID.TabIndex = 8;
-            this.txtProductID.TextChanged += new System.EventHandler(this.txtProductID_TextChanged);
             // 
             // txtProductName
             // 
             this.txtProductName.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtProductName.Location = new System.Drawing.Point(119, 179);
-            this.txtProductName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductName.Location = new System.Drawing.Point(178, 275);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(189, 20);
+            this.txtProductName.Size = new System.Drawing.Size(282, 26);
             this.txtProductName.TabIndex = 9;
             // 
             // txtPrice
             // 
             this.txtPrice.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtPrice.Location = new System.Drawing.Point(119, 222);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrice.Location = new System.Drawing.Point(178, 342);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(189, 20);
+            this.txtPrice.Size = new System.Drawing.Size(282, 26);
             this.txtPrice.TabIndex = 10;
             // 
             // txtQty
             // 
             this.txtQty.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtQty.Location = new System.Drawing.Point(119, 272);
-            this.txtQty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtQty.Location = new System.Drawing.Point(178, 418);
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(189, 20);
+            this.txtQty.Size = new System.Drawing.Size(282, 26);
             this.txtQty.TabIndex = 11;
             // 
             // txtDesc
             // 
             this.txtDesc.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtDesc.Location = new System.Drawing.Point(119, 314);
-            this.txtDesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDesc.Location = new System.Drawing.Point(178, 483);
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(189, 20);
+            this.txtDesc.Size = new System.Drawing.Size(282, 26);
             this.txtDesc.TabIndex = 12;
             // 
             // btnAdd
@@ -210,10 +196,9 @@ namespace AliceMarket
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.ForeColor = System.Drawing.Color.FloralWhite;
-            this.btnAdd.Location = new System.Drawing.Point(45, 391);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Location = new System.Drawing.Point(54, 635);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(64, 29);
+            this.btnAdd.Size = new System.Drawing.Size(96, 45);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -226,10 +211,9 @@ namespace AliceMarket
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.ForeColor = System.Drawing.Color.FloralWhite;
-            this.btnEdit.Location = new System.Drawing.Point(139, 391);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Location = new System.Drawing.Point(208, 635);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(64, 29);
+            this.btnEdit.Size = new System.Drawing.Size(96, 45);
             this.btnEdit.TabIndex = 14;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -241,10 +225,9 @@ namespace AliceMarket
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.FloralWhite;
-            this.btnDelete.Location = new System.Drawing.Point(231, 391);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Location = new System.Drawing.Point(355, 635);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(64, 29);
+            this.btnDelete.Size = new System.Drawing.Size(96, 45);
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -264,40 +247,53 @@ namespace AliceMarket
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(352, 131);
-            this.dgvProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvProducts.Location = new System.Drawing.Point(528, 202);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.RowHeadersWidth = 62;
             this.dgvProducts.RowTemplate.Height = 28;
-            this.dgvProducts.Size = new System.Drawing.Size(382, 294);
+            this.dgvProducts.Size = new System.Drawing.Size(573, 452);
             this.dgvProducts.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(451, 99);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(676, 152);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 14);
+            this.label8.Size = new System.Drawing.Size(138, 22);
             this.label8.TabIndex = 17;
             this.label8.Text = "Find a Product";
             // 
             // txtFind
             // 
             this.txtFind.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtFind.Location = new System.Drawing.Point(569, 99);
-            this.txtFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFind.Location = new System.Drawing.Point(854, 152);
             this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(159, 20);
+            this.txtFind.Size = new System.Drawing.Size(236, 26);
             this.txtFind.TabIndex = 18;
+            // 
+            // btnCreateDB
+            // 
+            this.btnCreateDB.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnCreateDB.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
+            this.btnCreateDB.FlatAppearance.BorderSize = 0;
+            this.btnCreateDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateDB.ForeColor = System.Drawing.Color.FloralWhite;
+            this.btnCreateDB.Location = new System.Drawing.Point(142, 556);
+            this.btnCreateDB.Name = "btnCreateDB";
+            this.btnCreateDB.Size = new System.Drawing.Size(220, 55);
+            this.btnCreateDB.TabIndex = 19;
+            this.btnCreateDB.Text = " CREATE A DATABASE";
+            this.btnCreateDB.UseVisualStyleBackColor = false;
+            this.btnCreateDB.Click += new System.EventHandler(this.btnCreateDB_Click);
             // 
             // Products
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
-            this.ClientSize = new System.Drawing.Size(776, 484);
+            this.ClientSize = new System.Drawing.Size(1164, 745);
+            this.Controls.Add(this.btnCreateDB);
             this.Controls.Add(this.txtFind);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dgvProducts);
@@ -317,7 +313,6 @@ namespace AliceMarket
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Products";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -354,8 +349,9 @@ namespace AliceMarket
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtFind;
         private EventHandler txtProductID_TextChanged;
-        private EventHandler btnAdd_Click;
+        /*private EventHandler btnAdd_Click;*/
+        private System.Windows.Forms.Button btnCreateDB;
 
-        public EventHandler Products_Load { get; private set; }
+       
     }
 }

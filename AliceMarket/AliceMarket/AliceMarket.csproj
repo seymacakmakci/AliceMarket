@@ -66,6 +66,24 @@
     <Compile Include="Categories.Designer.cs">
       <DependentUpon>Categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoriesForm.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoriesForm.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriesForm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoriesForm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriesForm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoriesForm.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriesTbl.cs">
+      <DependentUpon>CategoriesForm.tt</DependentUpon>
+    </Compile>
     <Compile Include="Contexts\AliceMarketDbContext.cs" />
     <Compile Include="Customers.cs">
       <SubType>Form</SubType>
@@ -113,6 +131,24 @@
     <Compile Include="Orders.Designer.cs">
       <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrdersForm.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdersForm.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersForm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdersForm.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersForm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdersForm.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersTbl.cs">
+      <DependentUpon>OrdersForm.tt</DependentUpon>
+    </Compile>
     <Compile Include="Products.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,12 +184,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="OrdersForm.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrdersForm.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="CustomersForm.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CustomersForm.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="CategoriesForm.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CategoriesForm.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CategoriesForm.edmx.diagram">
+      <DependentUpon>CategoriesForm.edmx</DependentUpon>
+    </None>
     <None Include="CustomersForm.edmx.diagram">
       <DependentUpon>CustomersForm.edmx</DependentUpon>
+    </None>
+    <None Include="OrdersForm.edmx.diagram">
+      <DependentUpon>OrdersForm.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -170,6 +220,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CategoriesForm.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CategoriesForm.edmx</DependentUpon>
+      <LastGenOutput>CategoriesForm.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CategoriesForm.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CategoriesForm.edmx</DependentUpon>
+      <LastGenOutput>CategoriesForm.cs</LastGenOutput>
+    </Content>
     <Content Include="CustomersForm.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CustomersForm.edmx</DependentUpon>
@@ -179,6 +239,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CustomersForm.edmx</DependentUpon>
       <LastGenOutput>CustomersForm.cs</LastGenOutput>
+    </Content>
+    <Content Include="OrdersForm.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrdersForm.edmx</DependentUpon>
+      <LastGenOutput>OrdersForm.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OrdersForm.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrdersForm.edmx</DependentUpon>
+      <LastGenOutput>OrdersForm.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

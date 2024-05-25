@@ -18,11 +18,11 @@ namespace AliceMarket
             InitializeComponent();
         }
         
-        AliceMarketEntities market = new AliceMarketEntities();
+        AliceMarketEntities1 market = new AliceMarketEntities1();
 
         public void listCustomers()
         {
-            dgvCustomers.DataSource = market.CustomersTbls.ToList();
+              dgvCustomers.DataSource = market.CustomersTbls.ToList();
 
         }
 
@@ -178,6 +178,6 @@ namespace AliceMarket
             Clear();
         }
 
-
+        
     }
 }

@@ -33,7 +33,7 @@
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="BirthDate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityContainer Name="AliceMarketEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AliceMarketEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CustomersTbls" EntityType="Self.CustomersTbl" />
         </EntityContainer>
       </Schema>
@@ -41,7 +41,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AliceMarketModelStoreContainer" CdmEntityContainer="AliceMarketEntities">
+        <EntityContainerMapping StorageEntityContainer="AliceMarketModelStoreContainer" CdmEntityContainer="AliceMarketEntities1">
           <EntitySetMapping Name="CustomersTbls">
             <EntityTypeMapping TypeName="AliceMarketModel.CustomersTbl">
               <MappingFragment StoreEntitySet="CustomersTbl">

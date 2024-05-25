@@ -14,49 +14,60 @@ namespace AliceMarket
         public Categories()
         {
             InitializeComponent();
+             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            dgvCategories.CellClick += dgvCategories_CellClick;
         }
 
-        AliceMarketEntities market = new AliceMarketEntities();
+         AliceMarket1Entities1 market = new AliceMarket1Entities1();
 
-        public void ListCategories()
+        public void listCategories()
         {
             dgvCategories.DataSource = market.CategoriesTbls.ToList();
         }
 
         public void Clear()
         {
-            txtCategoryID.Text = txtCtgName.Text = tctCtgDesc.Text = "";
+            txtCategoryID.Text = txtCtgName.Text = txtCtgDesc.Text = "";
         }
 
         private void Categories_Load(object sender, EventArgs e)
         {
-            ListCategories();
+            listCategories();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
+
             // Create a new category object and populate it with values from input fields
             var category = new CategoriesTbl
             {
-                CategoryName = txtCtgName.Text,
-                Description = tctCtgDesc.Text
+                Name = txtCtgName.Text,
+                Description = txtCtgDesc.Text
             };
 
             market.CategoriesTbls.Add(category);
             market.SaveChanges();
 
             MessageBox.Show("New category is saved");
-            ListCategories();
+            listCategories();
             Clear();
         }
 
         private void dgvCategories_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Ensure a valid row is clicked
+     
+            if (e.RowIndex >= 0)
             {
-                txtCategoryID.Text = dgvCategories.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtCtgName.Text = dgvCategories.Rows[e.RowIndex].Cells[1].Value.ToString();
-                tctCtgDesc.Text = dgvCategories.Rows[e.RowIndex].Cells[2].Value.ToString();
+                var row = dgvCategories.Rows[e.RowIndex];
+                var cellValues = row.Cells.Cast<DataGridViewCell>().Select(cell => cell.Value?.ToString()).ToArray();
+
+                System.Diagnostics.Debug.WriteLine($"Clicked Row Index: {e.RowIndex}, Values: {string.Join(", ", cellValues)}");
+
+                txtCategoryID.Text = row.Cells[0].Value?.ToString() ?? string.Empty;
+                txtCtgName.Text = row.Cells[1].Value?.ToString() ?? string.Empty;
+                txtCtgDesc.Text = row.Cells[2].Value?.ToString() ?? string.Empty;
+               
             }
         }
 
@@ -72,7 +83,7 @@ namespace AliceMarket
                     market.SaveChanges();
 
                     MessageBox.Show("Category is deleted.");
-                    ListCategories();
+                    listCategories();
                     Clear();
                 }
                 else
@@ -94,13 +105,13 @@ namespace AliceMarket
 
                 if (category != null)
                 {
-                    category.CategoryName = txtCtgName.Text;
-                    category.Description = tctCtgDesc.Text;
+                    category.Name = txtCtgName.Text;
+                    category.Description = txtCtgDesc.Text;
 
                     market.SaveChanges();
 
                     MessageBox.Show("Update is made successfully");
-                    ListCategories();
+                    listCategories();
                     Clear();
                 }
                 else
@@ -114,25 +125,21 @@ namespace AliceMarket
             }
         }
 
-        private void txtFindCategory_TextChanged(object sender, EventArgs e)
+        private void txtFind_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtFind.Text))
             {
                 var foundCategories = market.CategoriesTbls
-                    .Where(c => c.CategoryName.Contains(txtFind.Text))
+                    .Where(c => c.Name.Contains(txtFind.Text))
                     .ToList();
                 dgvCategories.DataSource = foundCategories;
             }
             else
             {
-                ListCategories();
+                listCategories();
             }
         }
 
-        private void txtFind_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
